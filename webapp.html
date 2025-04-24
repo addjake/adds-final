@@ -62,36 +62,38 @@
   </div>
 
   <script>
-    const recipes = [
-      {
-        name: "Grilled Chicken Tacos 🌮",
-        description: "Juicy grilled chicken in a warm tortilla, topped with avocado and lime. Perfect for dinner nights!"
-      },
-      {
-        name: "Reese’s Cupcakes 🧁",
-        description: "Chocolate cupcakes stuffed with mini Reese's and topped with PB frosting magic."
-      },
-      {
-        name: "Açaí Bowl 🍓",
-        description: "Frozen açaí blended with banana, berries, and topped with granola and honey. Fresh and energizing!"
-      },
-      {
-        name: "Zesty Avocado Toast 🥑",
-        description: "Toasted sourdough with smashed avocado, red pepper flakes, and a drizzle of lemon. Simple & classy."
-      },
-      {
-        name: "Pasta Primavera 🍝",
-        description: "Colorful veggies sautéed with garlic, tossed with pasta and Parmesan. Light and flavorful."
-      }
-    ];
-
-    function generateRecipe() {
-      const recipe = recipes[Math.floor(Math.random() * recipes.length)];
-      document.getElementById('recipe-card').innerHTML = `
-        <h2>${recipe.name}</h2>
-        <p>${recipe.description}</p>
-      `;
-    }
-  </script>
+    window.onload = function () {
+      const recipes = [
+        {
+          name: "Grilled Chicken Tacos 🌮",
+          description: "Juicy grilled chicken in a warm tortilla, topped with avocado and lime. Perfect for dinner nights!"
+        },
+        {
+          name: "Reese’s Cupcakes 🧁",
+          description: "Chocolate cupcakes stuffed with mini Reese's and topped with PB frosting magic."
+        },
+        {
+          name: "Açaí Bowl 🍓",
+          description: "Frozen açaí blended with banana, berries, and topped with granola and honey. Fresh and energizing!"
+        },
+        {
+          name: "Zesty Avocado Toast 🥑",
+          description: "Toasted sourdough with smashed avocado, red pepper flakes, and a drizzle of lemon. Simple & classy."
+        },
+        {
+          name: "Pasta Primavera 🍝",
+          description: "Colorful veggies sautéed with garlic, tossed with pasta and Parmesan. Light and flavorful."
+        }
+      ];
+  
+      window.generateRecipe = function () {
+        const recipe = recipes[Math.floor(Math.random() * recipes.length)];
+        document.getElementById('recipe-card').innerHTML = `
+          <h2>${recipe.name}</h2>
+          <p>${recipe.description}</p>
+        `;
+      };
+    };
+  </script>  
 </body>
 </html>
