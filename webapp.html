@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe Idea Generator</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 3rem;
+      color: #333;
+    }
+
+    .card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      max-width: 600px;
+      margin: 2rem auto;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      background-color: #ff6f91;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    button:hover {
+      background-color: #ff4e7c;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍴 Recipe Idea Generator</h1>
+  <p>Click the button to get a fun recipe idea!</p>
+
+  <div class="card" id="recipe-card">
+    <h2>Click below to start!</h2>
+  </div>
+
+  <button onclick="generateRecipe()">🎲 Get Recipe</button>
+
+  <a href="scratch.html">← Back to Recipes Page</a>
+
+  <script>
+    const recipes = [
+      {
+        name: "Grilled Chicken Tacos 🌮",
+        description: "Juicy grilled chicken in a warm tortilla, topped with avocado and lime. Perfect for dinner nights!"
+        
+      },
+      {
+        name: "Reese’s Cupcakes 🧁",
+        description: "Chocolate cupcakes stuffed with mini Reese's and topped with PB frosting magic."
+      },
+      {
+        name: "Açaí Bowl 🍓",
+        description: "Frozen açaí blended with banana, berries, and topped with granola and honey. Fresh and energizing!"
+      },
+      {
+        name: "Zesty Avocado Toast 🥑",
+        description: "Toasted sourdough with smashed avocado, red pepper flakes, and a drizzle of lemon. Simple & classy."
+      },
+      {
+        name: "Pasta Primavera 🍝",
+        description: "Colorful veggies sautéed with garlic, tossed with pasta and Parmesan. Light and flavorful."
+      }
+    ];
+
+    function generateRecipe() {
+      const recipe = recipes[Math.floor(Math.random() * recipes.length)];
+      document.getElementById('recipe-card').innerHTML = `
+        <h2>${recipe.name}</h2>
+        <p>${recipe.description}</p>
+      `;
+    }
+
+    <div class="text-center mt-4">
+  <a href="index.html" class="btn btn-outline-primary">← Back to Home</a>
+</div>
+
+  </script>
+</body>
+</html>
